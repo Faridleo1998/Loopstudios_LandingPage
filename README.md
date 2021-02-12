@@ -51,7 +51,7 @@ Este sitio fue realizado por:
 
 ## Agradecimientos 🎁
 
-* Gracias por visitar mi proyecto, es para mi un honor compartir y demostrar mis habilidades con otras personas . 🤓
+* Gracias por visitar mi proyecto, es para mi un honor compartir y demostrar mis habilidades con otras personas.🤓
 * Puedes comentar que te ha parecido el proyecto o si tienes una sugerencia, el feedback es bienvenido.📢
 <!-- * Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
 * etc. -->
