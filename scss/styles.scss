@@ -1,3 +1,122 @@
 @import 'normalize';
 @import 'breakpoints';
 @import 'variables';
+
+/* General Styles */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: $font_secondary;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Custom Styles */
+.header {
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.no-webp .header {
+    background-image: url('../images/mobile/image-hero.jpg');
+
+    @include laptop {
+        background-image: url('../images/desktop/image-hero.jpg');
+    }
+}
+
+.webp .header {
+    background-image: url('../images/mobile/image-hero.webp');
+
+    @include laptop {
+        background-image: url('../images/desktop/image-hero.webp');
+    }
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+}
+
+.nav__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.nav__brand {
+    width: 15rem;
+}
+
+.nav__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color_black;
+    transform: translateX(-600px);
+    transition: transform .2s ease-in-out;
+    margin-top: 6rem;
+
+    @include tablet {
+        transform: translateX(-900px);
+    }
+}
+
+.links__content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: inherit;
+}
+
+.nav__link {
+    color: $color_white;
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__title {
+    text-transform: uppercase;
+    color: $color_white;
+    border: .3rem solid $color_white;
+    padding: 2rem;
+    line-height: 1.5;
+    font-family: $font_secondary;
+    font-size: 4rem;
+}
