@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Loopstudios landing page</title>
   <meta name="description" content="website of a virtual reality company">
   <link rel="preload" href="css/styles.css" as="style">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-  About
-  Careers
-  Events
-  Products
-  Support
-
-  Immersive experiences that deliver
-
+  <nav class="nav">
+    <div class="nav__content container">
+      <img class="nav__brand" src="images/logo.svg" alt="Logotipo Loopstudios">
+      <div class="nav__links">
+        <div class="links__content">
+          <a class="nav__link" href="#">About</a>
+          <a class="nav__link" href="#">Careers</a>
+          <a class="nav__link" href="#">Events</a>
+          <a class="nav__link" href="#">Products</a>
+          <a class="nav__link" href="#">Support</a>
+        </div>
+      </div>
+      <div class="nav__menu">
+        <img class="nav__icon" src="images/icon-hamburger.svg" alt="Icono del menú de navegación">
+      </div>
+    </div>
+  </nav>
+  <header class="header">
+    <div class="header__content container">
+      <h1 class="header__title">Immersive experiences that<br>deliver</h1>
+    </div>
+  </header>
+  <!--
   The leader in interactive VR
 
   Founded in 2011, Loopstudios has been producing world-class virtual reality 
@@ -44,14 +62,15 @@
   Products
   Support
 
-  © 2021 Loopstudios. All rights reserved.
+  © 2021 Loopstudios. All rights reserved. -->
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
 
   <script src="js/modernizr.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
