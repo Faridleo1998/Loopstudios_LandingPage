@@ -29,9 +29,7 @@ $iconHamburger.addEventListener('click', showMenu);
 
 $iconClose.addEventListener('click', closeMenu);
 
-$navLink.forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
+$navLinks.addEventListener('click', closeMenu);
 
 window.onscroll = ()=> {
     if ($iconHamburger.classList.contains('d-none')) {
