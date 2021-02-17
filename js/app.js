@@ -1,38 +1,53 @@
-// Variables
-const screenWidth = screen.width;
-const $nav = document.querySelector('#nav');
-const $iconHamburger = document.querySelector('#iconHamburger');
-const $iconClose = document.querySelector('#iconClose');
-const $navLinks = document.querySelector('#navLinks');
-const $navLink = document.querySelectorAll('.nav__links .container .nav__link');
+document.addEventListener('DOMContentLoaded', () => {
+    // Variables
+    const screenWidth = screen.width;
+    const $nav = document.querySelector('#nav');
+    const $iconHamburger = document.querySelector('#iconHamburger');
+    const $iconClose = document.querySelector('#iconClose');
+    const $navLinks = document.querySelector('#navLinks');
+    const $lazyLoadImages = document.querySelectorAll('.lazy');
 
 
-// Functions
-const closeMenu = ()=> {
-    $navLinks.style.setProperty('transform', `translateX(-${screenWidth}px)`);
-    $iconHamburger.classList.remove('d-none');
-    $iconClose.classList.add('d-none');
-}
+    // Functions
+    const observeElement = $lazyLoadImages =>{
+        $lazyLoadImages.forEach(element => {
+            if (element.isIntersecting) {
+                element.target.classList.remove('lazy');
+            }
+        });
+    };
 
-const showMenu = ()=> {
-    $navLinks.style.setProperty('transform', `translateX(0)`);
-    $iconHamburger.classList.add('d-none');
-    $iconClose.classList.remove('d-none');
-}
+    const observer = new IntersectionObserver(observeElement);
 
-
-
-// App
-closeMenu();
-
-$iconHamburger.addEventListener('click', showMenu);
-
-$iconClose.addEventListener('click', closeMenu);
-
-$navLinks.addEventListener('click', closeMenu);
-
-window.onscroll = ()=> {
-    if ($iconHamburger.classList.contains('d-none')) {
-        closeMenu();
+    const closeMenu = () => {
+        $navLinks.style.setProperty('transform', `translateX(-${screenWidth}px)`);
+        $iconHamburger.classList.remove('d-none');
+        $iconClose.classList.add('d-none');
     }
-}
+
+    const showMenu = () => {
+        $navLinks.style.setProperty('transform', `translateX(0)`);
+        $iconHamburger.classList.add('d-none');
+        $iconClose.classList.remove('d-none');
+    }
+
+
+
+    // App
+    $lazyLoadImages.forEach(element => {
+        observer.observe(element);
+    });
+    closeMenu();
+
+    $iconHamburger.addEventListener('click', showMenu);
+
+    $iconClose.addEventListener('click', closeMenu);
+
+    $navLinks.addEventListener('click', closeMenu);
+
+    window.onscroll = () => {
+        if ($iconHamburger.classList.contains('d-none')) {
+            closeMenu();
+        }
+    }
+})
