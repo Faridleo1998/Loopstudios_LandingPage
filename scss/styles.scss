@@ -16,8 +16,15 @@ html {
 }
 
 body {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: $font_secondary;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
 }
 
 a {
@@ -32,10 +39,24 @@ img {
     width: 90%;
     max-width: 120rem;
     margin: 0 auto;
+
+    @include tablet {
+        width: 80%;
+    }
 }
 
 .d-none {
     display: none;
+}
+
+.t-center{
+    text-align: center;
+}
+
+// Define none background-image at all elements
+#bg-image.lazy {
+    background-image: none;
+    background-color: $color_gray;
 }
 
 /* Custom Styles */
@@ -58,6 +79,10 @@ img {
 
 .nav__icon {
     width: 2.5rem;
+
+    @include laptop {
+        display: none;
+    }
 }
 
 .nav__links {
@@ -91,6 +116,39 @@ img {
     height: 100vh;
     background-size: cover;
     background-position: center center;
+
+    @include tablet {
+        height: 50vh;
+    }
+
+    @include laptop {
+        height: 100vh;
+    }
+}
+
+.header__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+
+    @include tablet {
+        justify-content: flex-start;
+    }
+}
+
+.header__title {
+    color: $color_white;
+    text-transform: uppercase;
+    border: 0.3rem solid $color_white;
+    padding: 2rem;
+    font-size: 4.5rem;
+    font-weight: normal;
+
+    @include laptop {
+        width: 50%;
+        font-size: 7rem;
+    }
 }
 
 .webp .header {
@@ -107,4 +165,170 @@ img {
     @include laptop {
         background-image: url(../images/desktop/image-hero.jpg);
     }
+}
+
+/* Main */
+.main {
+    margin: 3rem 0;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+/* --- Section Info --- */
+.info .container {
+    @include tablet {
+        width: 100%;
+    }
+}
+
+.info__img {
+    height: 20rem;
+    background-position: center center;
+    background-size: cover;
+
+    @include tablet {
+        height: 40rem;
+    }
+
+    @include laptop {
+        width: 50%;
+    }
+}
+
+.webp .info__img {
+    background-image: url(../images/mobile/image-interactive.webp);
+    
+    @include laptop {
+        background-image: url(../images/desktop/image-interactive.webp);
+    }
+}
+
+.no-webp .info__img {
+    background-image: url(../images/mobile/image-interactive.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-interactive.jpg);
+    }
+}
+
+.info__title,
+.our__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.info__title {
+    margin: 4rem 0 1rem;
+}
+
+/* --- Section Our --- */
+.our__card {
+    height: 13rem;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: flex-end;
+    margin: 3rem 0;
+}
+
+/* Cards */
+/* --- Card One --- */
+.webp .our__card--one {
+    background-image: url(../images/mobile/image-deep-earth.webp);
+}
+
+.no-webp .our__card--one {
+    background-image: url(../images/mobile/image-deep-earth.jpg);
+}
+
+/* --- Card Two --- */
+.webp .our__card--two {
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%), url(../images/mobile/image-night-arcade.webp);
+}
+
+.no-webp .our__card--two {
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%), url(../images/mobile/image-night-arcade.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--three {
+    background-image: url(../images/mobile/image-soccer-team.webp);
+}
+
+.no-webp .our__card--three {
+    background-image: url(../images/mobile/image-soccer-team.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--four {
+    background-image: url(../images/mobile/image-grid.webp);
+}
+
+.no-webp .our__card--four {
+    background-image: url(../images/mobile/image-grid.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--five {
+    background-image: url(../images/mobile/image-from-above.webp);
+}
+
+.no-webp .our__card--five {
+    background-image: url(../images/mobile/image-from-above.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--six {
+    background-image: url(../images/mobile/image-pocket-borealis.webp);
+}
+
+.no-webp .our__card--six {
+    background-image: url(../images/mobile/image-pocket-borealis.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--seven {
+    background-image: url(../images/mobile/image-curiosity.webp);
+}
+
+.no-webp .our__card--seven {
+    background-image: url(../images/mobile/image-curiosity.jpg);
+}
+
+/* --- Card Three --- */
+.webp .our__card--eight {
+    background-image: url(../images/mobile/image-fisheye.webp);
+}
+
+.no-webp .our__card--eight {
+    background-image: url(../images/mobile/image-fisheye.jpg);
+}
+
+.our__text {
+    font-size: 2.5rem;
+    color: $color_white;
+    padding: 5rem 0 1rem 2rem;
+    width: 50%;
+    height: 100%;
+    font-weight: normal;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%);
+}
+
+.our__text--modifier {
+    width: 30%;
+}
+
+.our__btn {
+    color: $color_black;
+    border: 3px solid $color_black;
+    text-transform: uppercase;
+    font-family: $font_primary;
+    padding: 1rem;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 15rem;
 }
