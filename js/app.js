@@ -56,5 +56,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeMenu();
             }
         }
-    })
+    });
 })
