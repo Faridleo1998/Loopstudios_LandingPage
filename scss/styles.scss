@@ -49,8 +49,12 @@ img {
     display: none;
 }
 
-.t-center{
+.t-center {
     text-align: center;
+}
+
+.section {
+    padding: 5rem 0;
 }
 
 // Define none background-image at all elements
@@ -71,6 +75,10 @@ img {
 .nav .container {
     display: flex;
     justify-content: space-between;
+
+    @include laptop {
+        align-items: center;
+    }
 }
 
 .nav__brand {
@@ -94,6 +102,12 @@ img {
     width: 100%;
     transition: all ease-in-out .3s;
     z-index: -1;
+
+    @include laptop {
+        background-color: transparent;
+        position: relative;
+        width: 50%;
+    }
 }
 
 .nav__links .container {
@@ -101,6 +115,11 @@ img {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    @include laptop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .nav__link {
@@ -109,6 +128,13 @@ img {
     font-family: $font_secondary;
     text-transform: uppercase;
     margin: 2rem 0;
+
+    @include laptop {
+        font-size: 2rem;
+        margin: 0;
+        text-transform: initial;
+        font-weight: bold;
+    }
 }
 
 /* --- Header --- */
@@ -122,7 +148,7 @@ img {
     }
 
     @include laptop {
-        height: 100vh;
+        height: 80vh;
     }
 }
 
@@ -148,6 +174,10 @@ img {
 
     @include laptop {
         width: 50%;
+        font-size: 5rem;
+    }
+
+    @include desktop {
         font-size: 7rem;
     }
 }
@@ -171,13 +201,19 @@ img {
 /* Main */
 .main {
     margin: 3rem 0;
-}
-
-.section {
-    padding: 5rem 0;
+    @include laptop {
+        margin-bottom: 0;
+    }
 }
 
 /* --- Section Info --- */
+.info {
+    @include laptop {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
 .info .container {
     @include tablet {
         width: 100%;
@@ -194,13 +230,14 @@ img {
     }
 
     @include laptop {
-        width: 50%;
+        flex-basis: 60%;
+        height: 40rem;
     }
 }
 
 .webp .info__img {
     background-image: url(../images/mobile/image-interactive.webp);
-    
+
     @include laptop {
         background-image: url(../images/desktop/image-interactive.webp);
     }
@@ -211,6 +248,27 @@ img {
 
     @include laptop {
         background-image: url(../images/desktop/image-interactive.jpg);
+    }
+}
+
+.info__text {
+    @include laptop {
+        background-color: $color_white;
+        margin-left: -15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: left;
+        padding: 5rem 0 0 8rem;
+        flex-basis: 60%;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    @include desktop {
+        flex-basis: 50%;
     }
 }
 
@@ -225,6 +283,48 @@ img {
 }
 
 /* --- Section Our --- */
+.our {
+    padding-top: 0;
+    
+    @include laptop {
+        padding-top: 5rem;
+    }
+
+    @include desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 8rem;
+    }
+}
+
+.our__title {
+    @include desktop {
+        grid-column: 1 / 2;
+        text-align: left;
+    }
+}
+
+.our__content {
+    @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin: 5rem 0;
+    }
+
+    @include laptop {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem;
+    }
+
+    @include desktop {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
 .our__card {
     height: 13rem;
     background-size: cover;
@@ -232,90 +332,176 @@ img {
     display: flex;
     align-items: flex-end;
     margin: 3rem 0;
+
+    @include tablet {
+        margin: 0;
+    }
+
+    @include laptop {
+        height: 40rem;
+    }
+
+    @include desktop {
+        height: 50rem;
+    }
 }
 
 /* Cards */
 /* --- Card One --- */
 .webp .our__card--one {
     background-image: url(../images/mobile/image-deep-earth.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-deep-earth.webp);
+    }
 }
 
 .no-webp .our__card--one {
     background-image: url(../images/mobile/image-deep-earth.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-deep-earth.jpg);
+    }
 }
 
 /* --- Card Two --- */
 .webp .our__card--two {
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%), url(../images/mobile/image-night-arcade.webp);
+    background-image: url(../images/mobile/image-night-arcade.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-night-arcade.webp);
+    }
 }
 
 .no-webp .our__card--two {
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%), url(../images/mobile/image-night-arcade.jpg);
+    background-image: url(../images/mobile/image-night-arcade.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-night-arcade.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--three {
     background-image: url(../images/mobile/image-soccer-team.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-soccer-team.webp);
+    }
 }
 
 .no-webp .our__card--three {
     background-image: url(../images/mobile/image-soccer-team.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-soccer-team.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--four {
     background-image: url(../images/mobile/image-grid.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-grid.webp);
+    }
 }
 
 .no-webp .our__card--four {
     background-image: url(../images/mobile/image-grid.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-grid.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--five {
     background-image: url(../images/mobile/image-from-above.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-from-above.webp);
+    }
 }
 
 .no-webp .our__card--five {
     background-image: url(../images/mobile/image-from-above.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-from-above.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--six {
     background-image: url(../images/mobile/image-pocket-borealis.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-pocket-borealis.webp);
+    }
 }
 
 .no-webp .our__card--six {
     background-image: url(../images/mobile/image-pocket-borealis.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-pocket-borealis.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--seven {
     background-image: url(../images/mobile/image-curiosity.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-curiosity.webp);
+    }
 }
 
 .no-webp .our__card--seven {
     background-image: url(../images/mobile/image-curiosity.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-curiosity.jpg);
+    }
 }
 
 /* --- Card Three --- */
 .webp .our__card--eight {
     background-image: url(../images/mobile/image-fisheye.webp);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-fisheye.webp);
+    }
 }
 
 .no-webp .our__card--eight {
     background-image: url(../images/mobile/image-fisheye.jpg);
+
+    @include laptop {
+        background-image: url(../images/desktop/image-fisheye.jpg);
+    }
 }
 
 .our__text {
     font-size: 2.5rem;
     color: $color_white;
     padding: 5rem 0 1rem 2rem;
-    width: 50%;
+    width: 40%;
     height: 100%;
     font-weight: normal;
     text-transform: uppercase;
-    background: linear-gradient(90deg, rgba(0,0,0,0.90) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(255, 255, 255, 0) 100%);
+
+    @include laptop {
+        padding-top: 30rem;
+        width: 50%;
+    }
+
+    @include desktop {
+        width: 60%;
+        padding-top: 40rem;
+    }
 }
 
 .our__text--modifier {
@@ -332,6 +518,11 @@ img {
     margin: 0 auto;
     text-align: center;
     width: 15rem;
+
+    @include desktop {
+        grid-column: 2 / 3;
+        margin: 0 0 0 auto;
+    }
 }
 
 /* Footer */
@@ -343,8 +534,15 @@ img {
 .footer__content {
     text-align: center;
     color: $color_white;
+
     img {
         margin-bottom: 2rem;
+    }
+
+    @include laptop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 }
 
@@ -352,12 +550,23 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include laptop {
+        flex-direction: row;
+        gap: 2rem;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
 }
 
 .footer__link {
     color: $color_white;
     margin: 1rem 0;
     font-weight: bold;
+
+    @include laptop {
+        margin: 0;
+    }
 }
 
 .footer__social {
@@ -365,8 +574,23 @@ img {
     display: flex;
     justify-content: center;
     gap: 2rem;
+
+    @include laptop {
+        justify-content: flex-end;
+        margin-top: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        img {
+            display: block;
+        }
+    }
 }
 
 .footer__text {
     margin: 0;
+
+    @include laptop {
+        grid-row: 2 / 3;
+        text-align: right;
+    }
 }
