@@ -20,7 +20,7 @@ Sí deseas realizar este reto te invito a que descargues los archivos del proyec
 Te invito a conocer el sitio desplegado en las siguientes plataformas:
 
 - Netlify <!-- colocar url del sitio desplegado -->
-- Github Pages <!-- colocar url del sitio desplegado -->
+- Github Pages: https://faridleo1998.github.io/Loopstudios_LandingPage/
 
 ## Construido con 🛠️
 
