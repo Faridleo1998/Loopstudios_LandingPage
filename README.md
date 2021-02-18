@@ -15,12 +15,14 @@ Sí deseas realizar este reto te invito a que descargues los archivos del proyec
 - Aplicación de la metodología BEM (Block, Element, Modifier).
 - Mejora en el performance del sitio gracias al uso de imagenes .webp (no incluidas en los archivos suministrados por [Frontend Mentor](https://www.frontendmentor.io)) y el uso de la librería modernizr.js.
 
+![](./images/performance.png)
+
 ## Despliegue 📦
 
 Te invito a conocer el sitio desplegado en las siguientes plataformas:
 
-- Netlify <!-- colocar url del sitio desplegado -->
 - Github Pages: https://faridleo1998.github.io/Loopstudios_LandingPage/
+- Netlify: https://loopstudios-faridmoreno.netlify.app/
 
 ## Construido con 🛠️
 
