@@ -70,6 +70,7 @@ img {
     padding: 2rem 0;
     position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 .scrolling-active {
@@ -112,6 +113,7 @@ img {
         background-color: transparent;
         position: relative;
         width: 50%;
+        z-index: inherit;
     }
 }
 
@@ -139,6 +141,11 @@ img {
         margin: 0;
         text-transform: initial;
         font-weight: bold;
+
+        &:hover {
+            border-bottom: 2px solid $color_white;
+            margin-bottom: -2px;
+        }
     }
 }
 
@@ -343,11 +350,8 @@ img {
     }
 
     @include laptop {
-        height: 40rem;
-    }
-
-    @include desktop {
         height: 50rem;
+        
     }
 }
 
@@ -496,21 +500,37 @@ img {
     height: 100%;
     font-weight: normal;
     text-transform: uppercase;
+    z-index: 1;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(255, 255, 255, 0) 100%);
 
     @include laptop {
-        padding-top: 30rem;
-        width: 50%;
+        padding-top: 40rem;
+        padding-right: 15rem;
+        width: 100%;
+        &:hover {
+            background: $color_white;
+            opacity: .8;
+            color: $color_black;
+        }
+        
     }
 
     @include desktop {
-        width: 60%;
-        padding-top: 40rem;
+        padding-right: 10rem;
     }
 }
 
 .our__text--modifier {
     width: 30%;
+
+    @include laptop {
+        width: 100%;
+        padding-right: 20rem;
+    }
+
+    @include desktop {
+        padding-right: 15rem;
+    }
 }
 
 .our__btn {
@@ -523,6 +543,12 @@ img {
     margin: 0 auto;
     text-align: center;
     width: 15rem;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: $color_black;
+        color: $color_white;
+    }
 
     @include desktop {
         grid-column: 2 / 3;
@@ -548,6 +574,14 @@ img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+
+        img {
+            margin-bottom: 0;
+        }
+
+        a{
+            text-align: left;
+        }
     }
 }
 
@@ -571,6 +605,10 @@ img {
 
     @include laptop {
         margin: 0;
+        &:hover {
+            border-bottom: 2px solid $color_white;
+            margin-bottom: -2px;
+        }
     }
 }
 
@@ -585,8 +623,15 @@ img {
         margin-top: 0;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
+        margin-bottom: 2rem;
+
         img {
             display: block;
+        }
+
+        a:hover {
+            border-bottom: 2px solid $color_white;
+            margin-bottom: -10px;
         }
     }
 }
