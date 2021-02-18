@@ -67,14 +67,19 @@ img {
 /* --- Navigation --- */
 .nav {
     /* background-color: transparent; */
-    padding: 3rem 0;
+    padding: 2rem 0;
     position: fixed;
     width: 100%;
+}
+
+.scrolling-active {
+    background-color: $color_black;
 }
 
 .nav .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     @include laptop {
         align-items: center;
