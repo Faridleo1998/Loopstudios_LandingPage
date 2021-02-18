@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Variables
     const screenWidth = screen.width;
-    const $nav = document.querySelector('#nav');
+    /* const $nav = document.querySelector('#nav'); */
     const $iconHamburger = document.querySelector('#iconHamburger');
     const $iconClose = document.querySelector('#iconClose');
     const $navLinks = document.querySelector('#navLinks');
@@ -37,7 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     $lazyLoadImages.forEach(element => {
         observer.observe(element);
     });
-    closeMenu();
+
+    if (screenWidth < 1200) {
+        closeMenu();
+    }
 
     $iconHamburger.addEventListener('click', showMenu);
 
@@ -46,8 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     $navLinks.addEventListener('click', closeMenu);
 
     window.onscroll = () => {
-        if ($iconHamburger.classList.contains('d-none')) {
-            closeMenu();
+        if (screenWidth < 1200) {
+            if ($iconHamburger.classList.contains('d-none')) {
+                closeMenu();
+            }
         }
     }
 })
